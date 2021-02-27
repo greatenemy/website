@@ -3,7 +3,7 @@
   NPM_VERSION = "6.4.1"
 
 [build]
-  command = "npm run build"
+  command = "npm run build:hugo"
   publish = "dist"
 
 [context.deploy-preview]

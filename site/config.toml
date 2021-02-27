@@ -1,5 +1,5 @@
 baseurl = "https://greatenemy.com/"
-languageCode = "en_US"
+languageCode = "en"
 title = "greatenemy"
 
 theme = "hugo-tikva"
@@ -282,3 +282,6 @@ posts = "/:year/:month/:slug/"
 [outputFormats.RSS]
 mediatype = "application/rss"
 baseName = "feed"
+
+[markup]
+  defaultMarkdownHandler = "blackfriday"

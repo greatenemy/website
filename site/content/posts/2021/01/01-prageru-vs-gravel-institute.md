@@ -7,4 +7,4 @@ author: "BojanglerGTX"
 comic_url: "/2021/01/prageru-vs-gravel-institute.png"
 ---
 
-![{{< param title >}}]({{< param comic_url >}})
+<img alt="{{< param title >}}" class="comic" src="{{< param comic_url >}}" >

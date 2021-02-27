@@ -7,4 +7,4 @@ author: "BojanglerGTX"
 comic_url: "/2020/12/centrists-in-1945.png"
 ---
 
-![{{< param title >}}]({{< param comic_url >}})
+<img alt="{{< param title >}}" class="comic" src="{{< param comic_url >}}" >

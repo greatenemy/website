@@ -7,4 +7,4 @@ author: "BojanglerGTX"
 comic_url: "/2020/11/personal-responsibility.png"
 ---
 
-![{{< param title >}}]({{< param comic_url >}})
+<img alt="{{< param title >}}" class="comic" src="{{< param comic_url >}}" >

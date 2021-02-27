@@ -4,8 +4,6 @@
 {{ $author :=  .Params.author | default .Site.Params.author }}
 {{ $showNumberOfWords := .Params.ShowNumberOfWords | default .Site.Params.ShowNumberOfWords  }}
 
-posts/single
-
 <h2><a href="{{ .Permalink }}" rel="bookmark">{{ .Title }}</a></h2>
 
     <div class="post-meta">{{ if .Site.Params.ShowDate }}<span class="byline-icon fa fa-clock-o" aria-hidden="true"></span> <span class="screen-reader-text">{{ i18n "date" }}: </span><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> - {{ end }}{{ if $author }}
@@ -15,7 +13,17 @@ posts/single
 
   {{ .Content }}
 
-  <a class="btn btn-lg cc-btn-default{{if not .PrevInSection}} disabled{{end}}" href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}">Older</a>
-  <a class="btn btn-lg cc-btn-default{{if not .NextInSection}} disabled{{end}}" href="{{if .NextInSection}}{{.NextInSection.Permalink}}{{end}}">Newer</a>
+  <div class="row">
+    <div class="mx-auto">
+      <a class="btn btn-lg btn-primary cc-btn-default{{if not .PrevInSection}} disabled{{end}}" href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}">
+        <i class="fa fa-angle-double-left"></i>
+        Older
+      </a>
+      <a class="btn btn-lg cc-btn-default{{if not .NextInSection}} disabled{{end}}" href="{{if .NextInSection}}{{.NextInSection.Permalink}}{{end}}">
+        Newer
+        <i class="fa fa-angle-double-right"></i>
+      </a>
+    </div>
+  </div>
 
 {{ end }}

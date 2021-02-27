@@ -1,3 +1,4 @@
 ---
 ---
-Powered by [Hugo](https://gohugo.io). Theme [Tikva](https://github.com/geschke/hugo-tikva) by [Ralf Geschke](https://www.kuerbis.org).
+
+<span class="text-muted">© 2020–2021 greatenemy</span>

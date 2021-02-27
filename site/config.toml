@@ -12,7 +12,7 @@ DefaultContentLanguage = "en" # current values: "en" or "de"
 
 # To enable a demo of pagination, this value is set to 2 instead of the default. See https://gohugo.io/getting-started/configuration/
 # for all site variables. The paginate default is 10
-paginate = 2
+paginate = 10
 
 # Google Analytics setting, see Hugo internal templates
 #googleAnalytics = "UA-123-45"
@@ -116,7 +116,7 @@ paginate = 2
 # the [[params.theme.footer.demoColumn]] entries or just disable the footer by setting enabled = false. 
 
 [params.theme.footer]
-    enabled = true # Show the footer part
+    # enabled = true # Show the footer part
     #numberColumns = 3 # Set number of columns available in footer of a page. Use the "footer" folder in the page structure to add content. If nothing is set, the default number is 3. Currently.i.e. since v0.2 not used, the number of columns is identical to the number of files in footer directory.
     fontColor = '#f9fcf9' # set #rgb code, leave empty for default
     linkColor = '' # Set color of links as #rrggbb code, leave empty for default

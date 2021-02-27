@@ -13,17 +13,33 @@
 
   {{ .Content }}
 
+
+  {{ $allPosts := where site.RegularPages "Type" "posts" }}
+  {{ $allPostsByDate := sort $allPosts ".Date" "asc" }}
+  {{ $firstPost := index (first 1 $allPostsByDate) 0 }}
+  {{ $lastPost := index (last 1 $allPostsByDate) 0 }}
+
   <div class="row">
-    <div class="mx-auto">
-      <a class="btn btn-lg btn-primary cc-btn-default{{if not .PrevInSection}} disabled{{end}}" href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}">
+    <div class="mx-auto btn-group">
+      <a class="btn btn-lg btn-secondary cc-btn-default{{ if eq $firstPost.Permalink $.Permalink }} disabled{{end}}" href="{{if ne $firstPost.Permalink $.Permalink}}{{$firstPost.Permalink}}{{end}}">
         <i class="fa fa-angle-double-left"></i>
-        Older
+        First
       </a>
-      <a class="btn btn-lg cc-btn-default{{if not .NextInSection}} disabled{{end}}" href="{{if .NextInSection}}{{.NextInSection.Permalink}}{{end}}">
-        Newer
+      <a class="btn btn-lg btn-secondary cc-btn-default{{if not .PrevInSection}} disabled{{end}}" href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}">
+        <i class="fa fa-angle-left"></i>
+        Prev
+      </a>
+      <a class="btn btn-lg btn-secondary cc-btn-default{{if not .NextInSection}} disabled{{end}}" href="{{if .NextInSection}}{{.NextInSection.Permalink}}{{end}}">
+        Next
+        <i class="fa fa-angle-right"></i>
+      </a>
+      <a class="btn btn-lg btn-secondary cc-btn-default{{ if eq $lastPost.Permalink $.Permalink }} disabled{{end}}" href="{{if ne $lastPost.Permalink $.Permalink}}{{$lastPost.Permalink}}{{end}}">
         <i class="fa fa-angle-double-right"></i>
+        Last
       </a>
     </div>
   </div>
+
+  <br />
 
 {{ end }}

@@ -12,4 +12,8 @@
 
 
   {{ .Content }}
+
+  <a class="btn btn-lg cc-btn-default{{if not .PrevInSection}} disabled{{end}}" href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}">Older</a>
+  <a class="btn btn-lg cc-btn-default{{if not .NextInSection}} disabled{{end}}" href="{{if .NextInSection}}{{.NextInSection.Permalink}}{{end}}">Newer</a>
+
 {{ end }}

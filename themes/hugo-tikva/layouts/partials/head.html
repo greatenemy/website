@@ -36,9 +36,6 @@
 <script type="text/javascript">
     var azbalacSettingHeaderMoveTitle = '{{ .Site.Params.Theme.Header.MoveTitle }}';
 </script>
-<script src="{{ .Site.BaseURL }}js/jquery-3.4.1.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/functions.js"></script>
-
 
 {{- $overlayBackgroundColorFallback := "#000000" -}}
 {{- $overlayBackgroundColor := trim $overlayBackgroundColorFallback "#" -}}
@@ -284,11 +281,6 @@ body {
     {{ end }}
 
 {{ end }}
-{{ "<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->" | safeHTML }}
-{{ "<!--[if lt IE 9]>" | safeHTML }}
-        <script src="//cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-        <script src="//cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-{{ "<![endif]-->" | safeHTML }}
 {{- partial "head_includes.html" . }}
 
 {{- partial "javascript_header.html" . }}

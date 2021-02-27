@@ -17,7 +17,7 @@ paginate = 2
 # Google Analytics setting, see Hugo internal templates
 #googleAnalytics = "UA-123-45"
 
-
+# canonifyurls = true
 # For all color settings, please use the format "#rrggbb". 
 
 # Generic parameters
@@ -85,7 +85,7 @@ paginate = 2
     linkColor = '' # header link color, leave empty for default
     backgroundColor = '' # header background color, leave empty for default
 
-    image = 'img/header_bg_example.jpg' # Use header image. This option is only valid if the theme is configured to the "header" style. 
+    image = 'img/header_bg.jpg' # Use header image. This option is only valid if the theme is configured to the "header" style. 
     
     # width and height settings are not used anymore
     #width = 2512 # Width of header image. Please set this value to the correct size, because it will be used for size calculation.
@@ -93,7 +93,7 @@ paginate = 2
     altText = 'alt text for header image' # Set alt text for header image, default empty
     displayHeaderText = true # display the title and subtitle - yes or no?
     titleOnImage = true # true|false, default false. Display title and subtitle as overlay in the foreground of the image. It is only possible to set the title as image overlay if an image is available. If no image is configured, the theme will do a fallback to non-overlay, i.e. title and subtitle will be displayed above the main navigation. 
-    fontColorTitle = '#073642' # For all colors, please use #rrggbb format with # and 6 characters
+    # fontColorTitle = '#073642' # For all colors, please use #rrggbb format with # and 6 characters
     fontColorSubtitle = '#333333'
     overlayAlignment = 'lt' # lt = left/top, mt = middle/top, rt = right/top, lb = left/bottom, mb = middle/bottom, rb = right/bottom
     overlayDistanceVertical = '20' # Dependent on the overlayAlignment option, this option is used to modify the vertical distance between the margin and the title/subtitle. This allows to place the title and subtitle on nearly any place related to the header image. 
@@ -237,17 +237,37 @@ paginate = 2
 
   [[menu.main]]
     identifier = "posts"
-    name = "Blog"
+    name = "Comics"
     url = "/posts/"
     weight = 20
 
 
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 30
+  # [[menu.main]]
+  #   identifier = "about"
+  #   name = "About"
+  #   url = "/about/"
+  #   weight = 30
 
+  [[menu.main]]
+    identifier = "tumblr"
+    name = "tumblr"
+    pre = "<i class='fa fa-tumblr'></i>"
+    url = "https://greatenemycomic.tumblr.com"
+    weight = 130
+
+  [[menu.main]]
+    identifier = "facebook"
+    name = "facebook"
+    pre = "<i class='fa fa-facebook'></i>"
+    url = "https://www.facebook.com/greatenemydotcom"
+    weight = 140
+
+  [[menu.main]]
+    identifier = "rss"
+    name = "rss"
+    pre = "<i class='fa fa-rss'></i>"
+    url = "/feed.xml"
+    weight = 200
     
     
 [taxonomies]
@@ -257,3 +277,8 @@ series = "series"
   
 [permalinks]
 posts = "/:year/:month/:slug/"
+
+[outputFormats]
+[outputFormats.RSS]
+mediatype = "application/rss"
+baseName = "feed"

@@ -191,3 +191,6 @@
 .main-nav .has-children .has-children > a:after {
   content: "\f105";
 }
+img.comic {
+  max-width: 100%;
+}

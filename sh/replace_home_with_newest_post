@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# replace_home_with_newest_post
+
+if [[ !$(/usr/bin/id -u) -ne 0 ]]; then
+    echo "Do Not Run This As Root"
+    exit
+fi
+
+set -e # halt on error
+set -x # echo cmds before executing
+set -u # fail on undefined variable
+set -o pipefail # force pipelines to fail on fail
+
+# ls -la dist/{2021,2022}/*
+
+THIS_YEAR=$(date +"%Y")
+LAST_YEAR=$(date --date='1 year ago' +%Y)
+
+# echo $THIS_YEAR
+# echo $LAST_YEAR
+ag '<html' -l dist/{$THIS_YEAR,$LAST_YEAR}

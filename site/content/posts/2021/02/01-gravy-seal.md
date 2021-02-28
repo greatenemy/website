@@ -1,5 +1,5 @@
 ---
-title: "Gravy Seal"
+title: "Gravy SEAL"
 date: 2021-02-01
 publishdate: 2021-02-01
 tags: ["acab", "black lives matter", "blm", "militias", "police brutality", "gravy seal"]

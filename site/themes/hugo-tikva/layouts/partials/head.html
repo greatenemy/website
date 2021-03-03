@@ -35,6 +35,12 @@
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#000000">
 
+  {{ if .Params.comic_url }}
+  <meta property="og:image" content="{{ .Params.comic_url }}" />
+  {{ else }}
+  <meta property="og:image" content="/ms-icon-310x310.png" />
+  {{ end }}
+
 {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}

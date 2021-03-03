@@ -40,6 +40,11 @@
   {{ else }}
   <meta property="og:image" content="/ms-icon-310x310.png" />
   {{ end }}
+  {{ if .Params.og_desc }}
+  <meta property="og:description" content="{{ .Params.og_desc }}" />
+  {{ else if .Params.title }}
+  <meta property="og:description" content="{{ .Params.title }}" />
+  {{ end }}
 
 {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

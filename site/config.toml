@@ -263,11 +263,18 @@ paginate = 10
     weight = 140
 
   [[menu.main]]
+    identifier = "github"
+    name = "github"
+    pre = "<i class='fa fa-github'></i>"
+    url = "https://www.github.com/greatenemy"
+    weight = 200
+
+  [[menu.main]]
     identifier = "rss"
     name = "rss"
     pre = "<i class='fa fa-rss'></i>"
     url = "/feed.xml"
-    weight = 200
+    weight = 300
     
     
 [taxonomies]

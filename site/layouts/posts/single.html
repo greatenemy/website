@@ -4,12 +4,15 @@
 {{ $author :=  .Params.author | default .Site.Params.author }}
 {{ $showNumberOfWords := .Params.ShowNumberOfWords | default .Site.Params.ShowNumberOfWords  }}
 
-<h2><a href="{{ .Permalink }}" rel="bookmark">{{ .Title }}</a></h2>
+<h2>
+  <a href="{{ .Permalink }}" rel="bookmark">{{ .Title }}</a>
+</h2>
 
     <div class="post-meta">{{ if .Site.Params.ShowDate }}<span class="byline-icon fa fa-clock-o" aria-hidden="true"></span> <span class="screen-reader-text">{{ i18n "date" }}: </span><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> - {{ end }}{{ if $author }}
     <span class="byline-icon fa fa-user" aria-hidden="true"></span><span class="screen-reader-text">{{ i18n "author" }}: </span> {{ $author }}{{ end }}
-    {{ if $showNumberOfWords }} - {{ .FuzzyWordCount }} {{ i18n "words" }}{{ end }} </div>
+    {{ if $showNumberOfWords }} - {{ .FuzzyWordCount }} {{ i18n "words" }}{{ end }}</div>
 
+<br>
 
   {{ .Content }}
 
@@ -35,6 +38,14 @@
       <a class="btn btn-lg btn-secondary cc-btn-default{{ if eq $lastPost.Permalink $.Permalink }} disabled{{end}}" href="{{if ne $lastPost.Permalink $.Permalink}}{{$lastPost.Permalink}}{{end}}">
         <i class="fa fa-angle-double-right"></i>
         Last
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <a class="pull-right" target="_blank" href="https://github.com/greatenemy/website/blob/main/site/content/{{ .File.Path }}">
+        <i class="fa fa-github"></i>
+        propose edit
       </a>
     </div>
   </div>

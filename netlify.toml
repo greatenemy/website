@@ -3,7 +3,7 @@
   NPM_VERSION = "6.4.1"
 
 [build]
-  command = "npm run build:hugo"
+  command = "npm run build:hugo && npm run build:purgecss"
   publish = "dist"
 
 [context.deploy-preview]

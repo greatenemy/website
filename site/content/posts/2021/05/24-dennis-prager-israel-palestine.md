@@ -10,4 +10,4 @@ og_desc: "Dennis Prager on the Israel Palestine Conflict"
 
 <img alt="{{< param title >}}" class="comic" src="{{< param comic_url >}}" >
 
-Inspired by this video by [The Serfs (youtube.com)](https://youtube.com/g2h4Eic4qw4)
+Inspired by this video by [The Serfs (youtube.com)](https://www.youtube.com/watch?v=g2h4Eic4qw4)

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# replace_home_with_newest_post
+
+if [[ !$(/usr/bin/id -u) -ne 0 ]]; then
+    echo "Do Not Run This As Root"
+    exit
+fi
+
+set -e # halt on error
+set -x # echo cmds before executing
+set -u # fail on undefined variable
+set -o pipefail # force pipelines to fail on fail
+
+CONTENT=dist
+
+PURGECSS () {
+  node_modules/.bin/purgecss --css $1 --content dist/**/*.html -o $2
+}
+
+PURGECSS site/static/css/custom.css dist/css/custom.css
+PURGECSS site/themes/hugo-tikva/static/css/bootswatch/darkly.min.css dist/css/bootswatch/darkly.min.css
+PURGECSS site/themes/hugo-tikva/static/css/font-awesome/css/font-awesome.min.css dist/css/font-awesome/css/font-awesome.min.css

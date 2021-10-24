@@ -256,6 +256,20 @@ paginate = 10
     weight = 130
 
   [[menu.main]]
+    identifier = "twitter"
+    name = "twitter"
+    pre = "<i class='fa fa-twitter'></i>"
+    url = "https://twitter.com/greatenemycomic"
+    weight = 140
+
+  [[menu.main]]
+    identifier = "instagram"
+    name = "instagram"
+    pre = "<i class='fa fa-instagram'></i>"
+    url = "https://instagram.com/greatenemycomic"
+    weight = 140
+
+  [[menu.main]]
     identifier = "facebook"
     name = "facebook"
     pre = "<i class='fa fa-facebook'></i>"
